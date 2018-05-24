@@ -7,8 +7,8 @@ pipeline {
     }
     stages {
         stage('Check') {
-            agent any 
-            def pom = readMavenPom file: 'pom.xml'
+            agent any
+            pom = readMavenPom file: 'pom.xml'
             steps {
                 sh 'printenv'
                 sh 'echo ${pom.artifactId}'
